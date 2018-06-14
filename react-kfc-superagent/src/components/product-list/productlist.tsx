@@ -4,7 +4,8 @@ import IProduct from '../../models/product';
 import Product from '../product/product';
 
 interface IProps {
-    list: IProduct[]
+    list: IProduct[],
+    getCart: Function
 }
 
 class ProductList extends React.Component<IProps>{
@@ -19,6 +20,7 @@ class ProductList extends React.Component<IProps>{
             .set('accept', 'json')
             .end((err, res) => {
                 alert('Added successfully')
+                this.props.getCart();
             })
     }
     shouldComponentUpdate(nextProps: IProps): boolean{
@@ -40,7 +42,7 @@ class ProductList extends React.Component<IProps>{
                         this.addTocart
                         // this.addTocart.bind(this, p.id)
                     }
-                    />
+                />
             )
         });
         return (

@@ -3,3 +3,27 @@ npm install  superagent --save
 npm install --save-dev @types/superagent
 
 https://getbootstrap.com/docs/4.1/getting-started/introduction/
+
+//Open chromepostman
+https://chrome.google.com/webstore/category/extensions?hl=en
+
+settings -> enable gh-pages
+you will get URL
+in your package.json
+npm install gh-pages --save-dev
+"predeploy": "npm run build"
+"deploy": "gh-pages -d build"
+
+npm run deploy
+
+
+
+https://reacttraining.com/react-router/web/example/basic
+npm install react-router-dom --save
+npm install --save-dev @types/react-router-dom
+
+
+jintoppy@gmail.com
+9035066384
+
+go to settings again and select gh-pages branch
