@@ -11,6 +11,8 @@ https://getbootstrap.com/docs/4.1/getting-started/introduction/
 https://chrome.google.com/webstore/category/extensions?hl=en
 
 settings -> enable gh-pages
+
+npm install -g http
 you will get URL
 in your package.json
 npm install gh-pages --save-dev
