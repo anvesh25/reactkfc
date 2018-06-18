@@ -5,14 +5,16 @@ interface IProps {
     cart: ICartItem[]
 }
 
-class MiniCart extends React.Component<IProps>{
-    public render(){
+// Changed react component to react.SFC
+// class MiniCart extends React.Component<IProps>{
+    const MiniCart:React.SFC<IProps> = ({cart}) => {
+    // public render(){
         return (
             <span>
-                You have {this.props.cart.length} items in your cart
+                You have {cart.length} items in your cart
             </span>
         )
-    }
+    // }
 }
 
 export default MiniCart;

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import IProduct from '../../models/product';
 import './product.css';
+import {Link } from "react-router-dom";
 
 interface IProps 
 {
@@ -27,10 +28,16 @@ interface IProps
                         <p className="card-text">
                             {item.description}
                         </p>
+                        <p className="card-text">
+                            Price: {item.price}
+                        </p>
+
                         <div>
                             <button 
                                 onClick={onClickEvent} 
-                                className="btn btn-success"> Add to cart </button>
+                                className="btn btn-success"> Add to cart 
+                            </button>
+                            <Link to="/details">Product Details</Link>   
                         </div>
                     </div>
                 </div>  

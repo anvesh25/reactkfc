@@ -4,9 +4,9 @@ import * as React from 'react';
 import {Route, Link } from "react-router-dom";
 import './App.css';
 import MiniCart from './components/mini-cart/minicart';
-import ProductList from './components/product-list/productlist';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
+import Details from './pages/details/Details';
 import ICartItem from './models/cartitem';
 import IProduct from './models/product';
 
@@ -17,7 +17,6 @@ interface IState {
   soleorder: boolean;
   
 }
-
 
 class App extends React.Component<{}, IState> 
 { 
@@ -42,23 +41,10 @@ class App extends React.Component<{}, IState>
       })
   }
 
-public getProduct = () => {
-  superagent
-      .get('http://5b209253ca762000147b256a.mockapi.io/api/products')
-      .end((err: superagent.ResponseError, res: superagent.Response) => 
-      {
-        // console.log(response.data);
-          this.setState({
-            products: res.body,
-            soleorder:false
-          })
-      });
-}
-
   componentDidMount()
   {
     console.log('componentDidMount')
-      this.getProduct();
+      // this.getProduct();
       this.getCart();
          
   }
@@ -68,25 +54,11 @@ public getProduct = () => {
     
   // }
   public render() 
-  {
-    let loadercomponent = null;
-    if(this.state.soleorder)
-    {
-      loadercomponent = (
-        <div className="progress">
-        <div className="progress-bar progress-bar-striped progress-bar-animated" 
-          role="progressbar" 
-          aria-valuenow={75} 
-          aria-valuemin={0} 
-          aria-valuemax={100} />
-      </div>
-      )
-    }
-    
+  {    
     return (
       <div className ="container">
         <nav className="site-header sticky-top">
-          <div className="col-2">
+          <div className="col-4">
             <h3> Food App </h3>
           </div>
           <div className="col-4">
@@ -99,30 +71,24 @@ public getProduct = () => {
                 </li>
               </ul>
           </div>
-          <div className="col-2">
+          <div className="col-4">
             <MiniCart cart = {this.state.cart}/>
           </div>
         </nav>
         <div className="container">
-            <div className="row">
-                <div className="col">
                   <Route 
-                  exact={true} 
-                  path="/" 
-                  component={Home} 
-                />
+                    exact={true} 
+                    path="/" 
+                    component={Home} 
+                  />
                 <Route 
                   path="/about" 
                   component={About} 
                 />
-                </div>
-
-            </div>
-            <ProductList 
-              getCart = {this.getCart}
-              list ={this.state.products}
-            />
-            {loadercomponent}
+                <Route 
+                  path="/details" 
+                  component={Details} 
+                />            
         </div>
       </div>
     );
