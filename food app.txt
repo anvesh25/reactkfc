@@ -1,4 +1,10 @@
 
+http://definitelytyped.org/
+
+https://reactstrap.github.io/
+
+https://reactstrap.github.io/components/modals/
+
 https://www.mockapi.io/projects/5b209253ca762000147b256b
 
 npm uninstall axios --save

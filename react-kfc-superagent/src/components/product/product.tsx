@@ -37,7 +37,7 @@ interface IProps
                                 onClick={onClickEvent} 
                                 className="btn btn-success"> Add to cart 
                             </button>
-                            <Link to="/details">Product Details</Link>   
+                            <Link  className="btn btn-primary" to={'/details/'+item.id}>Product Details</Link>   
                         </div>
                     </div>
                 </div>  
