@@ -12,7 +12,7 @@ class Addproduct extends React.Component<{}, IState>
    private priceInput: HTMLInputElement;
    private imageUrlInput: HTMLInputElement;
 
-   public onFormSubmit = (e: React.FormEvent<HTMLFontElement>) =>
+   public onFormSubmit = (e: React.FormEvent<HTMLFormElement>) =>
    {
         e.preventDefault();
         const inputValue ={
@@ -63,7 +63,7 @@ class Addproduct extends React.Component<{}, IState>
                     This is a body
                 </ModalBody>
                 <ModalFooter>
-                    ?<button onClick={this.closeModel}
+                    <button onClick={this.closeModel}
                     className="btn btn-default">
                     close
                     </button>

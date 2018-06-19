@@ -1,4 +1,13 @@
+6/19/2018:
 
+npm install bootstrap --save
+npm install react-router-dom --save
+npm install @types/react-router-dom --save-dev
+npm install flux --save
+npm install @types/flux --save-dev
+
+
+6/18/2018:
 http://definitelytyped.org/
 
 https://reactstrap.github.io/
