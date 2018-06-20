@@ -1,0 +1,10 @@
+var arr = ['a', 'b', 'c'];
+
+const indexToRemove =1;
+
+const res = [
+	...arr.slice(0, indexToRemove),
+	...arr.slice(indexToRemove+1, arr.length)];
+
+console.log(res);
+console.log(arr);

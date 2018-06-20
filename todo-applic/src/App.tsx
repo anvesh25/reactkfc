@@ -36,7 +36,7 @@ class App extends React.Component {
       <main role="main" className="container">
         <h1>Todo List</h1>
         <Route exact ={true} path="/" component={HomeContainer} />
-        <Route path=".add-todo" component={AddTodoContainer}/>
+        <Route path="/add-todo" component={AddTodoContainer}/>
       </main>
       </React.Fragment>
     );

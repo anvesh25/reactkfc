@@ -7,7 +7,7 @@ interface IState {
 
 interface IAction {
     type:string,
-    payload: string
+    payload: string | number    // Union or a number 
 }
 
 class TodoStore extends ReduceStore<IState, IAction>{
@@ -24,8 +24,16 @@ class TodoStore extends ReduceStore<IState, IAction>{
             case 'ADD_TODO' :
                 return{
                     ...state,
-                    todos: [...state.todos, action.payload]
+                    todos: [...state.todos, action.payload as string]
                 }
+            case 'DELETE_Todo' :
+                return{
+                    ...state,
+                    todos: [
+                        ...state.todos.slice(0, action.payload as number),
+                        ...state.todos.slice(action.payload as number + 1,  state.todos.length)
+                    ]
+                };
             default:
                 return state;
         } 

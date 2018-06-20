@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Container} from 'flux/utils';
 import TodoStores from '../stores/TodoStore';
 import TodoList from '../components/TodoList';
+import { deleteTodo } from '../actions/TodoActions';
 
 interface IState {
     todos: string[]
@@ -25,7 +26,10 @@ class HomeContainer extends React.Component<{}, IState>{
         }
     }
     public render(){
-        return(<TodoList todos={this.state.todos} />)
+        return(<TodoList
+            deleteTodo={deleteTodo}
+            todos={this.state.todos}
+            />)
     }
 }
 
